@@ -14,6 +14,8 @@ class ElasticsearchConsoleServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        $this->mergeConfigFrom(__DIR__.'/../config/elasticsearch_console.php','elasticsearch_console');
+        $this->publishes([__DIR__.'/../config/elasticsearch_console.php' => config_path('elasticsearch_console.php')]);
     }
 
     /**
@@ -23,10 +25,6 @@ class ElasticsearchConsoleServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
-            $this->publishes([__DIR__.'/../config/elasticsearch_console.php' => config_path('elasticsearch_console.php')]);
-        }
-        $this->mergeConfigFrom(__DIR__.'/../config/elasticsearch_console.php','elasticsearch_console');
         $this->loadViewsFrom(__DIR__.'/../resources/views','es-console');
     }
 }
