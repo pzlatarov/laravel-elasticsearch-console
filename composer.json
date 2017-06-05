@@ -1,0 +1,14 @@
+{
+    "name": "pzlatarov/laravel-elasticsearch-console",
+    "description": "An Elasticsearch console for Laravel",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Pavel Zlatarov",
+            "email": "pzlatarov@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.2"
+    }
+}
