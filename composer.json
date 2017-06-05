@@ -10,5 +10,10 @@
     ],
     "require": {
         "guzzlehttp/guzzle": "^6.2"
+    },
+    "autoload": {
+        "psr-0": {
+            "Pzlatarov\\ElasticsearchConsole": "src/"
+        }
     }
 }
