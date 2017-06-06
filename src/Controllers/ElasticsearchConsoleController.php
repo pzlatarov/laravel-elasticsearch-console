@@ -3,6 +3,7 @@
 namespace Pzlatarov\ElasticsearchConsole\Controllers;
 
 
+use Pzlatarov\ElasticsearchConsole\Kernel;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ConnectException;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -14,6 +15,12 @@ use Illuminate\Support\Facades\Input;
 class ElasticsearchConsoleController extends Controller
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function __construct(Kernel $kernel){
+        if($kernel->hasMiddleware('es_console')){
+            $this->middleware('es_console');
+        }
+    }
 
     public function index(){
         return view('es-console::index');
