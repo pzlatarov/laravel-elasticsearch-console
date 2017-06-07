@@ -11,6 +11,6 @@ namespace Pzlatarov\ElasticsearchConsole;
 class Kernel extends \App\Http\Kernel
 {
     public function hasMiddleware($middleware_name){
-        return array_key_exists($middleware_name,$this->middleware);
+        return array_key_exists($middleware_name,$this->routeMiddleware);
     }
 }
