@@ -16,5 +16,6 @@
         "psr-4": {
             "Pzlatarov\\ElasticsearchConsole": "src/"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
