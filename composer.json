@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Pzlatarov\\ElasticsearchConsole": "src/"
+            "Pzlatarov\\ElasticsearchConsole\\": "src/"
         }
     },
     "minimum-stability": "dev"
