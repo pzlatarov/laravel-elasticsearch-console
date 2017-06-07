@@ -6,5 +6,7 @@
  * Time: 4:18 PM
  */
 
-Route::get('elasticsearch-console','Pzlatarov\ElasticsearchConsole\Controllers\ElasticsearchConsoleController@index');
-Route::get('elasticsearch-console/query','Pzlatarov\ElasticsearchConsole\Controllers\ElasticsearchConsoleController@query')->name('esConsoleQuery');
+Route::group(['middleware'=>'web'], function (){
+    Route::get('elasticsearch-console','Pzlatarov\ElasticsearchConsole\Controllers\ElasticsearchConsoleController@index');
+    Route::get('elasticsearch-console/query','Pzlatarov\ElasticsearchConsole\Controllers\ElasticsearchConsoleController@query')->name('esConsoleQuery');
+});
